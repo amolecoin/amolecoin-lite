@@ -1,0 +1,11 @@
+.idea/
+gopherjs-tool.exe
+gopherjs-tool
+amolecoin.js
+amolecoin.js.map
+
+# dependencies
+/node_modules
+
+# temp files
+/coverage

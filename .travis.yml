@@ -1,0 +1,21 @@
+sudo: required
+dist: trusty
+language: go
+
+go:
+  - "1.10.x"
+
+install:
+  - go get -t ./...
+  - make install-linters
+  - npm install
+  - npm install --global source-map-support
+
+script:
+  - make check
+  - make build-js-min
+  - make test-suite-ts
+
+notifications:
+  # https://github.com/kvld/travisci-telegram TravisCI Telegram Bot integration
+  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
